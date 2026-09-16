@@ -1,0 +1,48 @@
+name: sign_language_glove
+description: Ứng dụng găng tay chuyển thủ ngữ sang văn bản
+
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # BLE — thay Bluetooth Classic
+  flutter_blue_plus: ^2.3.9
+
+  # Quyền runtime
+  permission_handler: ^12.0.3
+
+  # Đọc/ghi dataset.csv
+  path_provider: ^2.1.2
+
+  # Persist SampleID và danh sách nhãn
+  shared_preferences: ^2.2.3
+
+  # Xuất file lên google drive
+  share_plus: ^13.1.0
+
+    # TFLite inference
+  flutter_litert: 2.8.1
+  flutter_litert_flex: 1.1.0
+
+  # Text-to-Speech tiếng Việt
+  flutter_tts: ^4.2.0
+
+  speech_to_text: ^7.0.0 
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/model/sign_language_lstm_float32.tflite
+    - assets/model/label_map.json
+    - assets/model/scaler_params.json
